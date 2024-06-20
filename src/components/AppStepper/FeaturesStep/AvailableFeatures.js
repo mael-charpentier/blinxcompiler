@@ -2,7 +2,7 @@ const availableFeatures = [
   {
     name: 'airsensors',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesAGDesc',
     group: [
       'USE_MHZ19',
@@ -30,7 +30,7 @@ const availableFeatures = [
   {
     name: 'alexa',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesAlexaDesc',
     group: ['USE_EMULATION', 'USE_EMULATION_HUE', 'USE_EMULATION_WEMO'],
     custom: '',
@@ -39,7 +39,7 @@ const availableFeatures = [
   {
     name: 'USE_TASMOTA_CLIENT',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesArduinoSlaveDesc',
     tooltip: 'stepFeaturesArduinoSlaveTooltip',
     custom: '',
@@ -56,7 +56,7 @@ const availableFeatures = [
   {
     name: 'displays',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesDisplaysDesc',
     tooltip: 'stepFeaturesDisplaysTooltip',
     group: [
@@ -99,7 +99,7 @@ const availableFeatures = [
   {
     name: 'lvgl',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesLvglDesc',
     tooltip: 'stepFeaturesLvglTooltip',
     group: [
@@ -127,7 +127,7 @@ const availableFeatures = [
   {
     name: 'USE_ADC_VCC',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesDispVccDesc',
     tooltip: 'stepFeaturesDispVccTooltip',
     custom: '',
@@ -136,7 +136,7 @@ const availableFeatures = [
   {
     name: 'USE_DOMOTICZ',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesDomoticzDesc',
     custom: '',
     boards: ['all'],
@@ -151,7 +151,7 @@ const availableFeatures = [
   {
     name: 'energysensors',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesEnergyDesc',
     group: [
       'USE_HLW8012',
@@ -181,7 +181,7 @@ const availableFeatures = [
   {
     name: 'temphumpressensors',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesTempHumDesc',
     group: [
       'USE_SONOFF_SC',
@@ -215,7 +215,7 @@ const availableFeatures = [
   {
     name: 'lightsensors',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesLightDesc',
     tooltip: 'stepFeaturesLightTooltip',
     group: [
@@ -237,7 +237,7 @@ const availableFeatures = [
   {
     name: 'USE_HOME_ASSISTANT',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesHomeAssistantDesc',
     custom: '',
     boards: ['all'],
@@ -245,7 +245,7 @@ const availableFeatures = [
   {
     name: 'gpioexpanders',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesIOExpMCPDesc',
     tooltip: 'stepFeaturesIOExpMCPTooltip',
     group: ['USE_MCP230xx', 'USE_MCP230xx_OUTPUT', 'USE_MCP230xx_DISPLAYOUTPUT'],
@@ -256,7 +256,7 @@ const availableFeatures = [
   {
     name: 'USE_KNX',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesKNXDesc',
     include: ['USE_ENERGY_SENSOR'],
     group: [],
@@ -266,7 +266,7 @@ const availableFeatures = [
   {
     name: 'infrared',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesIRFullDesc',
     tooltip: 'stepFeaturesIRFullTooltip',
     group: ['USE_IR_REMOTE', 'USE_IR_REMOTE_FULL'],
@@ -276,7 +276,7 @@ const availableFeatures = [
   {
     name: 'USE_DISCOVERY',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesMDNSDesc',
     custom: '',
     boards: ['all'],
@@ -284,7 +284,7 @@ const availableFeatures = [
   {
     name: 'USE_MQTT_TLS',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesMQTTTLSDesc',
     tooltip: 'stepFeaturesMQTTTLSTooltip',
     custom: '',
@@ -293,7 +293,7 @@ const availableFeatures = [
   {
     name: 'USE_RC_SWITCH',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesRFTransceiverDesc',
     tooltip: 'stepFeaturesRFTransceiverTooltip',
     custom: '',
@@ -302,7 +302,7 @@ const availableFeatures = [
   {
     name: 'rules',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesRulesDesc',
     tooltip: 'stepFeaturesRulesTooltip',
     exclude: ['USE_SCRIPT'],
@@ -313,7 +313,7 @@ const availableFeatures = [
   {
     name: 'USE_SCRIPT',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesScriptDesc',
     tooltip: 'stepFeaturesScriptTooltip',
     exclude: ['rules'],
@@ -323,7 +323,7 @@ const availableFeatures = [
   {
     name: 'USE_TIMERS',
     value: true,
-    show: true,
+    show: false,
     description: 'stepFeaturesTimersDesc',
     custom: '',
     boards: ['all'],
@@ -331,7 +331,7 @@ const availableFeatures = [
   {
     name: 'USE_TUYA_MCU',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesTuyaMCUDesc',
     custom: '',
     boards: ['all'],
@@ -339,7 +339,7 @@ const availableFeatures = [
   {
     name: 'distance',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesDistanceDesc',
     group: ['USE_SR04', 'USE_VL53L0X', 'USE_HRXL', 'USE_DYP', 'USE_VL53L1X'],
     include: ['USE_I2C'],
@@ -349,7 +349,7 @@ const availableFeatures = [
   {
     name: 'USE_WEBSERVER',
     value: true,
-    show: true,
+    show: false,
     description: 'stepFeaturesWebInterfaceDesc',
     tooltip: 'stepFeaturesWebInterfaceTooltip',
     custom: '',
@@ -358,7 +358,7 @@ const availableFeatures = [
   {
     name: 'USE_WS2812',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesWS2812Desc',
     custom: '',
     boards: ['all'],
@@ -366,7 +366,7 @@ const availableFeatures = [
   {
     name: 'USE_ZIGBEE',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesZigbeeDesc',
     tooltip: 'stepFeaturesZigbeeTooltip',
     custom:
@@ -404,7 +404,7 @@ const availableFeatures = [
   {
     name: 'ufilesys',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesUFSDesc',
     tooltip: 'stepFeaturesUFSTooltip',
     group: ['USE_UFILESYS', 'USE_SDCARD', 'GUI_TRASH_FILE', 'GUI_EDIT_FILE'],
@@ -415,7 +415,7 @@ const availableFeatures = [
   {
     name: 'berry',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesBerryDesc',
     tooltip: 'stepFeaturesBerryTooltip',
     group: ['USE_BERRY', 'USE_BERRY_PSRAM'],
@@ -436,7 +436,7 @@ const availableFeatures = [
   {
     name: 'bluetooth',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesBluetoothDesc',
     tooltip: 'stepFeaturesBluetoothTooltip',
     group: ['USE_BLE_ESP32', 'USE_MI_ESP32'],
@@ -449,7 +449,7 @@ const availableFeatures = [
   {
     name: 'USE_ETHERNET',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesEthernetDesc',
     include: ['USE_SPI'],
     boards: ['esp32generic', 'esp32webcam'],
@@ -457,7 +457,7 @@ const availableFeatures = [
   {
     name: 'USE_SHUTTER',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesShutterDesc',
     custom:
       "//Below you will find additional shutter options with theirs default values, which you can modify by removing '//' before it\n" +
@@ -475,7 +475,7 @@ const availableFeatures = [
   {
     name: 'modbusbridge',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesModbusBridgeDesc',
     group: ['USE_MODBUS_BRIDGE', 'USE_MODBUS_BRIDGE_TCP'],
     boards: ['all'],
@@ -483,7 +483,7 @@ const availableFeatures = [
   {
     name: 'matter',
     value: false,
-    show: true,
+    show: false,
     description: 'stepFeaturesMatterDesc',
     group: [
       'USE_MATTER_DEVICE',
@@ -523,6 +523,28 @@ const availableFeatures = [
     show: false,
     description: 'stepFeaturesSPIDesc',
     boards: ['all'],
+  },
+  {
+    name: 'blinx',
+    value: true,
+    show: true,
+    description: 'stepFeaturesBlinxDesc',
+    include: [
+      'displays', 'airsensors', 'USE_ADC_VCC', 'energysensors',
+      'temphumpressensors', 'lightsensors', 'USE_DISCOVERY',
+      'distance', 'USE_WEBSERVER', 'ufilesys', 'rules',
+      'infrared', 'USE_RC_SWITCH', 'USE_TIMERS'
+    ],
+    exclude: ['berry', 'bluetooth', 'USE_ETHERNET'],
+    group: [
+      'BLINX'
+    ],
+    custom:
+      '#undef  USER_TEMPLATE'+
+      '#define USER_TEMPLATE      "{\\"NAME\\":\\"BLINX\\",\\"GPIO\\":[0,0,1,1,1,1,34,35,225,0,224,0,0,0,0,0,0,0,608,640,0,0],\\"FLAG\\":0,\\"BASE\\":1,\\"CMND\\":\\"Timezone -5:00|POWER1 ON|DisplayModel 2|DisplayWidth 128|DisplayHeight 32|DisplayDimmer 100|DisplayMode 2|SetOption55 1\\"}"'+
+      '#undef  MODULE'+
+      '#define MODULE             USER_MODULE',
+    boards: ['esp32c3'],
   },
 ];
 
