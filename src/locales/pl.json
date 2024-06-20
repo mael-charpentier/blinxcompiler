@@ -80,6 +80,7 @@
   "stepFeaturesMatterDesc": "Protokół Matter",
   "stepFeaturesLvglDesc": "LVGL",
   "stepFeaturesLvglTooltip": "Light and Versatile Embedded Graphics Library",
+  "stepFeaturesBlinxDesc" : "BLINX",
 
   "stepCustomParamsTitle": "Parametry użytkownika",
   "stepCustomParamsDesc": "Poniżej możesz wpisać własne parametry, które zostaną dodane na koniec pliku {filename}. Jeśli nie wiesz co to jest, po prostu kliknij NASTĘPNY.",

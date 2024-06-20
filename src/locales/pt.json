@@ -80,6 +80,7 @@
   "stepFeaturesMatterDesc": "Matter protocol",
   "stepFeaturesLvglDesc": "LVGL",
   "stepFeaturesLvglTooltip": "Light and Versatile Embedded Graphics Library",
+  "stepFeaturesBlinxDesc" : "BLINX",
 
   "stepCustomParamsTitle": "Parâmetros personalizados",
   "stepCustomParamsDesc": "Abaixo, você pode inserir parâmetros personalizados, que serão incluídos no final do arquivo {filename}. Se você não sabe o que é, apenas clique em Avançar.",

@@ -80,6 +80,7 @@
   "stepFeaturesMatterDesc": "Matter protocol",
   "stepFeaturesLvglDesc": "LVGL",
   "stepFeaturesLvglTooltip": "Light and Versatile Embedded Graphics Library",
+  "stepFeaturesBlinxDesc" : "BLINX",
 
   "stepCustomParamsTitle": "Optionele parameters",
   "stepCustomParamsDesc": "Hieronder kunt je optionele parameters toevoegen, welke worden toegevoegd aan het einde van het {filename} bestand. Als je niet weet wat dit is, klik op volgende.",
