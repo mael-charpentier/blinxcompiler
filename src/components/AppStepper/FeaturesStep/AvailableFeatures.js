@@ -540,10 +540,13 @@ const availableFeatures = [
       'BLINX'
     ],
     custom:
-      '#undef  USER_TEMPLATE'+
-      '#define USER_TEMPLATE      "{\\"NAME\\":\\"BLINX\\",\\"GPIO\\":[0,0,1,1,1,1,34,35,225,0,224,0,0,0,0,0,0,0,608,640,0,0],\\"FLAG\\":0,\\"BASE\\":1,\\"CMND\\":\\"Timezone -5:00|POWER1 ON|DisplayModel 2|DisplayWidth 128|DisplayHeight 32|DisplayDimmer 100|DisplayMode 2|SetOption55 1\\"}"'+
-      '#undef  MODULE'+
-      '#define MODULE             USER_MODULE',
+      '#undef  USER_TEMPLATE\n'+
+      '#define USER_TEMPLATE      '+
+        '"{\\"NAME\\":\\"BLINX\\",\\"GPIO\\":[0,0,1,1,1,1,34,35,225,0,224,0,0,0,0,0,0,0,608,640,0,0],'+
+        '\\"FLAG\\":0,\\"BASE\\":1,\\"CMND\\":\\"Timezone -5:00|POWER1 ON|DisplayModel 2|DisplayWidth 128'+
+        '|DisplayHeight 32|DisplayDimmer 100|DisplayMode 2|SetOption55 1\\"}"\n'+
+      '#undef  MODULE\n'+
+      '#define MODULE             USER_MODULE\n',
     boards: ['esp32c3'],
   },
 ];
