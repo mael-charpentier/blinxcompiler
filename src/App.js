@@ -45,9 +45,11 @@ class App extends Component {
       showDownloadLinks: false,
       compileMessages: '',
       features: {},
+      question: {},
       network: {},
       version: {},
       customParams: '',
+      customParamsDefine: '',
       tcGUILanguage,
     };
     this.handleNext = this.handleNext.bind(this);

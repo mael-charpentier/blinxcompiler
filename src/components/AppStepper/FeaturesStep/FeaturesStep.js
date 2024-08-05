@@ -15,6 +15,8 @@ import LinkIcon from '@material-ui/icons/Link';
 import availableFeatures from './AvailableFeatures';
 import { availableBoards, availableBoardChipTypes } from './AvailableBoards';
 import FeaturesSelector from './FeaturesSelector';
+import availableQuestion from './AvailableQuestion';
+import QuestionSelector from './QuestionSelector';
 import NextButton from '../NextButton';
 import BackButton from '../BackButton';
 import { FormattedMessage } from 'react-intl';
@@ -46,6 +48,22 @@ const getFeaturesDefaultStates = (board) => {
     }
   });
   defaults = { ...defaults, ...toIncludeExclude };
+  return defaults;
+};
+
+const getQuestionDefaultStates = (board) => {
+  let defaults = {};
+  let toIncludeExclude = {};
+  availableQuestion.forEach((feature) => {
+    if (
+      feature.boards.includes(board.name) ||
+      feature.boards.includes('all')
+    ) {
+      let t = {};
+      t[feature.name] = {value: feature.value, type: feature.type};
+      defaults = { ...defaults, ...t };
+    }
+  });
   return defaults;
 };
 
@@ -144,11 +162,14 @@ class FeaturesStep extends Component {
 
     const defaultBoard = availableBoards.filter((b) => b.default === true);
     const defaultStates = getFeaturesDefaultStates(defaultBoard[0]);
-    this.state = { features: { board: defaultBoard[0], ...defaultStates } };
+    const defaultQuestion = getQuestionDefaultStates(defaultBoard[0]);
+    this.state = { features: { board: defaultBoard[0], ...defaultStates }, question: {...defaultQuestion} };
     this.handleChangeCheckBox = this.handleChangeCheckBox.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
+
+    this.handleChangeQuestion = this.handleChangeQuestion.bind(this);
   }
 
   handleChangeCheckBox(event) {
@@ -170,6 +191,23 @@ class FeaturesStep extends Component {
     });
   }
 
+  handleChangeQuestion(event) {
+    const { value, name } = event.target;
+
+    this.setState((state) => {
+      let t = {};
+      t[name] = {value: value, type: state.question[name].type};
+
+      let newQuestion = { ...state.question, ...t };
+      // let newFeatures = Object.assign({}, state.features, featureState);
+
+      // Object.keys(featureState).forEach((f) => {
+      //   newFeatures[f] = featureState[f];
+      // });
+      return { features: { ...state.features }, question : { ...newQuestion } };
+    });
+  }
+
   handleNext() {
     const { nextHandler } = this.props;
     nextHandler({ ...this.state });
@@ -188,6 +226,7 @@ class FeaturesStep extends Component {
 
   render() {
     const { board, ...tempState } = this.state.features;
+    const { ...tempQuestion } = this.state.question;
     const { classes, nextHandler, backHandler, ...other } = this.props;
     const Wire = ({ children, ...props }) => children(props);
     return (
@@ -271,6 +310,22 @@ class FeaturesStep extends Component {
                     key={item.name}
                   />
                 )
+            )}
+          </div>
+          <div className={classes.actionsContainer}>
+            {availableQuestion.map(
+              (item) => {
+                if(item.show &&
+                (item.boards.includes(board.name) || item.boards.includes('all'))){
+                  return <QuestionSelector
+                    classes={classes}
+                    value={tempQuestion[item.name].value}
+                    item={item}
+                    onChange={this.handleChangeQuestion}
+                    key={item.name}
+                  />;
+                }
+              }
             )}
           </div>
           <div className={classes.actionsContainer}>

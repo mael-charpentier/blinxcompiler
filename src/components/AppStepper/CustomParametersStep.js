@@ -15,6 +15,7 @@ class CustomParametersStep extends Component {
     super(props);
     this.state = {
       customParams: '',
+      customParamsDefine: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -32,8 +33,28 @@ class CustomParametersStep extends Component {
       .filter((name) => name.startsWith('precustom#'))
       .reduce((acc, cval) => `${acc}\n${prevProps.pstate.features[cval]}`, '');
 
-    if (ncp !== pcp) {
-      this.setState({ customParams: ncp.trim() });
+
+
+    const ncpD = Object.keys(pstate.question)
+      .reduce((acc, cval) => {
+        if(pstate.question[cval].type == "string"){
+          return `${acc}\n#DEFINE ${cval} "${pstate.question[cval].value}"`;
+        } else {
+          return `${acc}\n#DEFINE ${cval} ${pstate.question[cval].value}`;
+        }
+      }, '');
+
+    const pcpD = Object.keys(prevProps.pstate.question)
+      .reduce((acc, cval) => {
+        if(prevProps.pstate.question[cval].type == "string"){
+          return `${acc}\n#DEFINE ${cval} "${prevProps.pstate.question[cval].value}"`;
+        } else {
+          return `${acc}\n#DEFINE ${cval} ${prevProps.pstate.question[cval].value}`;
+        }
+      }, '');
+
+    if (ncp !== pcp || ncpD !== pcpD) {
+      this.setState({ customParams: ncp.trim(), customParamsDefine: ncpD.trim() });
     }
   }
 
@@ -53,7 +74,7 @@ class CustomParametersStep extends Component {
 
   render() {
     const { classes, nextHandler, backHandler, ...other } = this.props;
-    const { customParams } = this.state;
+    const { customParams, customParamsDefine } = this.state;
     const placeholder =
       '#ifdef USE_MCP230xx\n #undef USE_MCP230xx\n#endif\n#define USE_MCP230xx\n\n' +
       '#ifdef USE_MCP230xx_ADDR\n #undef USE_MCP230xx_ADDR\n#endif\n#define USE_MCP230xx_ADDR 0x20\n';
@@ -82,7 +103,7 @@ class CustomParametersStep extends Component {
                 minRows={9}
                 maxRows={9}
                 className={classes.multiTextField}
-                value={customParams}
+                value={customParamsDefine + "\n\n" + customParams}
                 onChange={this.handleChange}
                 margin="normal"
                 InputProps={{
