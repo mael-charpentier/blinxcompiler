@@ -25,7 +25,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '250',
     show: true,
     name: 'SIZE_BUFFER_10S',
     boards: ['esp32c3'],
@@ -33,7 +33,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '200',
     show: true,
     name: 'SIZE_BUFFER_1M',
     boards: ['esp32c3'],
@@ -41,7 +41,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '150',
     show: true,
     name: 'SIZE_BUFFER_10M',
     boards: ['esp32c3'],
@@ -49,7 +49,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '100',
     show: true,
     name: 'SIZE_BUFFER_1H',
     boards: ['esp32c3'],
@@ -58,7 +58,7 @@ const availableQuestion = [
   },
 
   {
-    value: '300',
+    value: '100',
     show: true,
     name: 'SIZE_BUFFER_50MS_Tampon',
     boards: ['esp32c3'],
@@ -66,7 +66,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '100',
     show: true,
     name: 'SIZE_BUFFER_1S_Tampon',
     boards: ['esp32c3'],
@@ -74,7 +74,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '50',
     show: true,
     name: 'SIZE_BUFFER_10S_Tampon',
     boards: ['esp32c3'],
@@ -82,7 +82,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '5',
     show: true,
     name: 'SIZE_BUFFER_1M_Tampon',
     boards: ['esp32c3'],
@@ -90,7 +90,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '5',
     show: true,
     name: 'SIZE_BUFFER_10M_Tampon',
     boards: ['esp32c3'],
@@ -98,7 +98,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '5',
     show: true,
     name: 'SIZE_BUFFER_1H_Tampon',
     boards: ['esp32c3'],
@@ -107,7 +107,7 @@ const availableQuestion = [
   },
 
   {
-    value: '300',
+    value: '100',
     show: true,
     name: 'SIZE_BUFFER_50MS_limit',
     boards: ['esp32c3'],
@@ -115,7 +115,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '100',
     show: true,
     name: 'SIZE_BUFFER_1S_limit',
     boards: ['esp32c3'],
@@ -123,7 +123,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '10',
     show: true,
     name: 'SIZE_BUFFER_10S_limit',
     boards: ['esp32c3'],
@@ -131,7 +131,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '10',
     show: true,
     name: 'SIZE_BUFFER_1M_limit',
     boards: ['esp32c3'],
@@ -139,7 +139,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '10',
     show: true,
     name: 'SIZE_BUFFER_10M_limit',
     boards: ['esp32c3'],
@@ -147,7 +147,7 @@ const availableQuestion = [
     type: 'int',
   },
   {
-    value: '300',
+    value: '10',
     show: true,
     name: 'SIZE_BUFFER_1H_limit',
     boards: ['esp32c3'],
