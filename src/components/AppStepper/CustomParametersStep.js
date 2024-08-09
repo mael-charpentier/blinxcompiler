@@ -38,18 +38,18 @@ class CustomParametersStep extends Component {
     const ncpD = Object.keys(pstate.question)
       .reduce((acc, cval) => {
         if(pstate.question[cval].type == "string"){
-          return `${acc}\n#DEFINE ${cval} "${pstate.question[cval].value}"`;
+          return `${acc}\n#define ${cval} "${pstate.question[cval].value}"`;
         } else {
-          return `${acc}\n#DEFINE ${cval} ${pstate.question[cval].value}`;
+          return `${acc}\n#define ${cval} ${pstate.question[cval].value}`;
         }
       }, '');
 
     const pcpD = Object.keys(prevProps.pstate.question)
       .reduce((acc, cval) => {
         if(prevProps.pstate.question[cval].type == "string"){
-          return `${acc}\n#DEFINE ${cval} "${prevProps.pstate.question[cval].value}"`;
+          return `${acc}\n#define ${cval} "${prevProps.pstate.question[cval].value}"`;
         } else {
-          return `${acc}\n#DEFINE ${cval} ${prevProps.pstate.question[cval].value}`;
+          return `${acc}\n#define ${cval} ${prevProps.pstate.question[cval].value}`;
         }
       }, '');
 

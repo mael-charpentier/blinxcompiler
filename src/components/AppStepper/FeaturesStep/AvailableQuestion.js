@@ -2,7 +2,7 @@ const availableQuestion = [
   {
     value: 'blinx',
     show: true,
-    name: 'FriendlyNameBlinx',
+    name: 'DeviceNameBlinx',
     boards: ['esp32c3'],
     description: 'The name of the blinx',
     type: 'string',

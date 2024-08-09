@@ -15,12 +15,13 @@ const availableBoards = [
       board: 'esp32c3',
       build_unflags:
         // eslint-disable-next-line
-        '${env:tasmota32_base.build_unflags} -mno-target-align',
+        '{env:tasmota32_base.build_unflags} -flto -mtarget-align',
       build_flags:
         // eslint-disable-next-line
-        '${env:tasmota32_base.build_flags}',
+        '${env:tasmota32_base.build_flags} -fno-lto',
       // eslint-disable-next-line
       lib_extra_dirs: ['${env:tasmota32_base.lib_extra_dirs}'],
+      lib_ignore: ['TTGO TWatch Library', 'epdiy', 'Micro-RTSP', 'mp3_shine_esp32'],
     },
     platformio_env_name: 'tasmota32c3',
     tooltip: '',
