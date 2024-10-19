@@ -489,7 +489,7 @@ const availableFeatures = [
         '"{\\"NAME\\":\\"BLINX\\",\\"GPIO\\":[0,0,1,1,1,1,38,39,1,0,224,0,0,0,0,0,0,0,608,640,0,0],'+
         '\\"FLAG\\":0,\\"BASE\\":1,\\"CMND\\":\\"Timezone -5:00|DisplayModel 2|DisplayWidth 128|'+
         'DisplayHeight 32|DisplayDimmer 100|DisplayMode 6|SetOption55 1|i2cdriver16 0|i2cdriver40 0|'+
-        'i2cdriver31 1|i2cdriver54 0|NtpServer1 tic.umontreal.ca|PowerOnState ON|POWER1 ON|POWER2 ON|'+
+        'i2cdriver31 0|i2cdriver54 0|NtpServer1 tic.umontreal.ca|PowerOnState ON|POWER1 ON|POWER2 ON|'+
         'POWER3 ON|POWER4 ON|POWER5 ON|POWER6 ON|POWER7 ON|SetOption15 0|DeviceName " DeviceNameBlinx "|'+
         'Hostname " DeviceNameBlinx "|FriendlyName1 " DeviceNameBlinx "|FriendlyName2 " DeviceNameBlinx "|FriendlyName3 " DeviceNameBlinx "\\"}"\n'+
       '#undef  MODULE\n'+
