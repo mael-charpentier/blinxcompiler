@@ -116,7 +116,7 @@ const getFeaturePlatformioEntries = (data) => {
 };
 
 const prepareFiles = async (socket, data) => {
-  const { network, features, version, customParams, customParamsDefine } = data;
+  const { network, features, version, customParams } = data;
   await switchToBranch(data.version.tasmotaVersion);
 
   // user_config_override.h file
@@ -132,7 +132,6 @@ const prepareFiles = async (socket, data) => {
     `${userDefinesFeatures.join('')}` +
     `${userDefinesBoard.join('')}` +
     `${userDefinesVersion.join('')}` +
-    `${customParamsDefine}\n\n` +
     `${customParams}\n` +
     '#endif\n';
 

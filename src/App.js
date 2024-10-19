@@ -49,7 +49,6 @@ class App extends Component {
       network: {},
       version: {},
       customParams: '',
-      customParamsDefine: '',
       tcGUILanguage,
     };
     this.handleNext = this.handleNext.bind(this);

@@ -15,7 +15,6 @@ class CustomParametersStep extends Component {
     super(props);
     this.state = {
       customParams: '',
-      customParamsDefine: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -25,36 +24,34 @@ class CustomParametersStep extends Component {
   componentDidUpdate(prevProps) {
     const { pstate } = this.props;
 
-    const ncp = Object.keys(pstate.features)
+    const ncp = Object.keys(pstate.question)
+    .reduce((acc, cval) => {
+      if(pstate.question[cval].type == "string"){
+        return `${acc}\n#define ${cval} "${pstate.question[cval].value}"`;
+      } else {
+        return `${acc}\n#define ${cval} ${pstate.question[cval].value}`;
+      }
+    }, '')
+    + "\n\n" +
+    Object.keys(pstate.features)
       .filter((name) => name.startsWith('precustom#'))
       .reduce((acc, cval) => `${acc}\n${pstate.features[cval]}`, '');
 
-    const pcp = Object.keys(prevProps.pstate.features)
+    const pcp = Object.keys(prevProps.pstate.question)
+    .reduce((acc, cval) => {
+      if(prevProps.pstate.question[cval].type == "string"){
+        return `${acc}\n#define ${cval} "${prevProps.pstate.question[cval].value}"`;
+      } else {
+        return `${acc}\n#define ${cval} ${prevProps.pstate.question[cval].value}`;
+      }
+    }, '')
+    + "\n\n" +
+    Object.keys(prevProps.pstate.features)
       .filter((name) => name.startsWith('precustom#'))
       .reduce((acc, cval) => `${acc}\n${prevProps.pstate.features[cval]}`, '');
 
-
-
-    const ncpD = Object.keys(pstate.question)
-      .reduce((acc, cval) => {
-        if(pstate.question[cval].type == "string"){
-          return `${acc}\n#define ${cval} "${pstate.question[cval].value}"`;
-        } else {
-          return `${acc}\n#define ${cval} ${pstate.question[cval].value}`;
-        }
-      }, '');
-
-    const pcpD = Object.keys(prevProps.pstate.question)
-      .reduce((acc, cval) => {
-        if(prevProps.pstate.question[cval].type == "string"){
-          return `${acc}\n#define ${cval} "${prevProps.pstate.question[cval].value}"`;
-        } else {
-          return `${acc}\n#define ${cval} ${prevProps.pstate.question[cval].value}`;
-        }
-      }, '');
-
-    if (ncp !== pcp || ncpD !== pcpD) {
-      this.setState({ customParams: ncp.trim(), customParamsDefine: ncpD.trim() });
+    if (ncp !== pcp) {
+      this.setState({ customParams: ncp.trim() });
     }
   }
 
@@ -74,7 +71,7 @@ class CustomParametersStep extends Component {
 
   render() {
     const { classes, nextHandler, backHandler, ...other } = this.props;
-    const { customParams, customParamsDefine } = this.state;
+    const { customParams } = this.state;
     const placeholder =
       '#ifdef USE_MCP230xx\n #undef USE_MCP230xx\n#endif\n#define USE_MCP230xx\n\n' +
       '#ifdef USE_MCP230xx_ADDR\n #undef USE_MCP230xx_ADDR\n#endif\n#define USE_MCP230xx_ADDR 0x20\n';
@@ -103,7 +100,7 @@ class CustomParametersStep extends Component {
                 minRows={9}
                 maxRows={9}
                 className={classes.multiTextField}
-                value={customParamsDefine + "\n\n" + customParams}
+                value={customParams}
                 onChange={this.handleChange}
                 margin="normal"
                 InputProps={{
