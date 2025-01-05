@@ -487,13 +487,40 @@ const availableFeatures = [
       '#undef  USER_TEMPLATE\n'+
       '#define USER_TEMPLATE      '+
         '"{\\"NAME\\":\\"BLINX\\",\\"GPIO\\":[0,0,1,1,1,1,38,39,1,0,224,0,0,0,0,0,0,0,608,640,0,0],'+
-        '\\"FLAG\\":0,\\"BASE\\":1,\\"CMND\\":\\"Timezone -5:00|DisplayModel 2|DisplayWidth 128|'+
-        'DisplayHeight 32|DisplayDimmer 100|DisplayMode 6|SetOption55 1|i2cdriver16 0|i2cdriver40 0|'+
+        '\\"FLAG\\":0,\\"BASE\\":1,\\"CMND\\":\\"Timezone -5:00|SetOption55 1|i2cdriver16 0|i2cdriver40 0|'+
         'i2cdriver31 0|i2cdriver54 0|NtpServer1 tic.umontreal.ca|PowerOnState ON|POWER1 ON|POWER2 ON|'+
         'POWER3 ON|POWER4 ON|POWER5 ON|POWER6 ON|POWER7 ON|SetOption15 0|DeviceName " DeviceNameBlinx "|'+
         'Hostname " DeviceNameBlinx "|FriendlyName1 " DeviceNameBlinx "|FriendlyName2 " DeviceNameBlinx "|FriendlyName3 " DeviceNameBlinx "\\"}"\n'+
       '#undef  MODULE\n'+
-      '#define MODULE             USER_MODULE\n',
+      '#define MODULE             USER_MODULE\n\n'+
+      '#define USE_UNIVERSAL_DISPLAY\n'+
+      '#define DSP_ROM_DESC \\\n'+
+        '": SSD1306 0.91 OLED 128x32\n" \\\n'+
+        '":H,SSD1306_128x32,128,32,1,I2C,3c,*,*,*\n" \\\n'+
+        '":S,0,2,1,0,10,10\n" \\\n'+
+        '":I\n" \\\n'+
+        '"AE\n" \\\n'+
+        '"D5,80\n" \\\n'+
+        '"A8,1F\n" \\\n'+
+        '"D3,00\n" \\\n'+
+        '"40\n" \\\n'+
+        '"8D,14\n" \\\n'+
+        '"20,00\n" \\\n'+
+        '"A1\n" \\\n'+
+        '"C8\n" \\\n'+
+        '"DA,02\n" \\\n'+
+        '"81,8F\n" \\\n'+
+        '"D9,F1\n" \\\n'+
+        '"DB,40\n" \\\n'+
+        '"A4\n" \\\n'+
+        '"A6\n" \\\n'+
+        '"AF\n" \\\n'+
+        '":o,AE\n" \\\n'+
+        '":O,AF\n" \\\n'+
+        '":D,81\n" \\\n'+
+        '":A,00,10,40,00,00\n" \\\n'+
+        '":i,A6,A7\n" \\\n'+
+        '"#\n"',
     boards: ['esp32c3'],
   },
 ];
